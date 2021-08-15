@@ -1,5 +1,8 @@
+setuptools
+wheel
+psycopg2-binary
 django>=3.2.6
 djangorestframework>=3.12.4
 whitenoise>=5.3.0
-flake8
-pylint
+pylint>=2.9.6
+
