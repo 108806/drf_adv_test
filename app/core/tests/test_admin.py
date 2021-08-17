@@ -38,3 +38,4 @@ class AdminSiteTests(TestCase):
 
         self.assertEqual(res.status_code, 200)
 
+

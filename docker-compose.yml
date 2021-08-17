@@ -21,5 +21,5 @@ services:
     environment: 
       - POSTGRES_DB=app
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=testingEnvPassword777
+      - DB_PASS=testingEnvPassword777
 
