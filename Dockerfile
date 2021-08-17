@@ -12,7 +12,7 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg ma
 RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 
 RUN apt update
-RUN apt install postgresql-13 gcc-7 libc-dev -y
+RUN apt install postgresql-12 gcc-7 libc-dev -y
 
 COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
