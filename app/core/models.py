@@ -33,4 +33,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 	USERNAME_FIELD = 'email'
 
+class TestUser(models.Model):
+    """Delme asap"""
+    field 		= models.EmailField(max_length=255, unique=True)
 

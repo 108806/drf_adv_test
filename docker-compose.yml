@@ -11,17 +11,27 @@ services:
                 python manage.py makemigrations && python manage.py migrate && 
                 python manage.py runserver 0.0.0.0:8000"
     environment: 
-      - DB_HOST=db #'db' not working, https://stackoverflow.com/questions/58412802/docker-compose-on-a-django-app-postgresql-connection-refuse#58413119
+      - DB_HOST=db
       - DB_NAME=app
       - DB_USER=postgres
-      - DB_PASS=testingEnvPassword777    
+      - DB_PASS=testingEnvPassword777
     depends_on:
       - db
+    networks:
+      - djangonetwork
+    links:
+      - db:db
 
   db:
     image: postgres:13-buster
     environment: 
+      #- POSTGRES_HOST_AUTH_METHOD=trust
       - POSTGRES_DB=app
       - POSTGRES_USER=postgres
       - DB_PASS=testingEnvPassword777
+    networks:
+          - djangonetwork
 
+networks:
+  djangonetwork:
+    driver: bridge
